@@ -11,24 +11,6 @@
       }
     </style>
 
-    <script>
-      function GetCookie(name){
-        var pairs = document.cookie.splir(";");
-        for(var i=0; i<pairs.length; i++){
-          var pair = pairs[i].trim();
-          var unit = pair.split("=");
-          if(unit[0]==name)
-          return unescape(unit[1]);
-        }
-        return null;
-      }
-      function SetCookie (name, value, expireDate)
-      {
-        var cookieStr = name + "=" + escape(value) + ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
-        document.cookie = cookieStr;
-      }
-    </script>
-
     <script language="javascript">
     function yesorno1_checkbox(){
       var answer1;
@@ -46,28 +28,6 @@
 
   </head>
   <body>
-    <script>
-      var username = GetCookie("username");
-      var count = GetCookie("count");
-      var expite = new Date();
-      if(username == null){
-        count = 0;
-        username = prompt("이름을 입력해 주십시오","");
-        if(username == null){
-          alert("본인의 실명, 혹은 가명도 좋습니다.");
-          username="홍길동";
-        }
-        else{
-          expire.setTime(expire.getTime()+(365*24*3600*1000));
-          SetCookie("username",username,expire);
-        }
-      }
-      count++;
-      expire.setTime(expire.getTime()+(365*24*3600*1000));
-      SetCookie("count",count,expire);
-    </script>
-
-
 
     <div class='left-area'><font size="5em" color="blue"><b>미래일기</b></font></div>
     <script>
