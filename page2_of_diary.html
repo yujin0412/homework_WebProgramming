@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>2페이지</title>
+  </head>
+  <body>
+    <div class='left-area'><font size="5em" color="blue"><b>일기 작성하기</b></font></div>
+    <br><hr /><br>
+
+    <form action='3page_of_diary.html' method="post">
+      <div>
+        여행 국가 : <input type="text" name="country" size="12" balue="atoz" />
+        <br />
+        날짜 : <input type="date" name="startday" />
+        <br />
+        누구와 : <input type="text" name="withWho" size="12" balue="atoz" />
+        <br />
+        꼭 가야하는 관광지 :
+        <input type="text" name="mustGoPlace" size="12" balue="atoz" />
+      </div>
+      <br>
+
+      <textarea name="text_box" rows="10" cols="70" wrap="virtual">
+원하는 내용을 입력해주세요</textarea
+      >
+
+      <br><br>
+
+      <input type="submit" name="submit" value="이 순간 간직하기" />
+
+      <div style='width:80px;float:right;'>
+      <button type="button" onclick="location.href='page3_of_dairy.html';"> 여행일기 열람 </button>
+      <div>
+    </form>
+  </body>
+</html>

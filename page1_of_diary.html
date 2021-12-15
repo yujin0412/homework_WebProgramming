@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>미래일기 안내</title>
+    <style>
+      .left-area {
+        float: left;
+      }
+      .right-area {
+        float: right;
+      }
+    </style>
+
+    <script>
+      function GetCookie(name){
+        var pairs = document.cookie.splir(";");
+        for(var i=0; i<pairs.length; i++){
+          var pair = pairs[i].trim();
+          var unit = pair.split("=");
+          if(unit[0]==name)
+          return unescape(unit[1]);
+        }
+        return null;
+      }
+      function SetCookie (name, value, expireDate)
+      {
+        var cookieStr = name + "=" + escape(value) + ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
+        document.cookie = cookieStr;
+      }
+    </script>
+
+    <script language="javascript">
+    function yesorno1_checkbox(){
+      var answer1;
+      answer1=confirm("다른 브이로그를 참고하시겠습니까?");
+      return answer1;
+      }    
+
+    function yesorno2_checkbox(){
+      var answer2;
+      answer2=confirm("여행사 홈페이지를 참고하시겠습니까?");
+      return answer2;
+      }
+
+    </script>
+
+  </head>
+  <body>
+    <script>
+      var username = GetCookie("username");
+      var count = GetCookie("count");
+      var expite = new Date();
+      if(username == null){
+        count = 0;
+        username = prompt("이름을 입력해 주십시오","");
+        if(username == null){
+          alert("본인의 실명, 혹은 가명도 좋습니다.");
+          username="홍길동";
+        }
+        else{
+          expire.setTime(expire.getTime()+(365*24*3600*1000));
+          SetCookie("username",username,expire);
+        }
+      }
+      count++;
+      expire.setTime(expire.getTime()+(365*24*3600*1000));
+      SetCookie("count",count,expire);
+    </script>
+
+
+
+    <div class='left-area'><font size="5em" color="blue"><b>미래일기</b></font></div>
+    <script>
+    <div class='right-area'>document.write(userneme+"님의 "+count+"번 째 여행을 환영합니다");</div>
+    </script>
+      <br><br>
+    <hr />
+    <br>
+    <div>
+      코로나 19로 인해 사람 사이의 접촉이 차단되며 ‘코로나 블루’라는 신조어가 생겼다. 
+      ‘코로나’와 ‘우울’이 합쳐진 것으로, 코로나 19사태의 장기화로 일상에 큰 변화가 닥치며
+       생긴 무기력증을 뜻한다. 이 홈페이지는 삶의 의욕이 떨어진 상황에서 기분전환과 미래를
+        향한 희망을 쌓아 의욕을 북돋아주는 것이 목표이다. 경기관광공사의 통계에 따르면 코로나 
+        19가 종식되면 가장 먼저 하고 싶은 것으로 47%가 국내여행, 16%가 국외여행이라 답하였다. 
+        약 63%의 사람들이 자유롭게 여행을 하고 싶어하는 것으로 나타났다. 
+        <br><br>
+        <b>코로나가 종식된 미래에 여행하는 상황을 상상하여 그때의 내가 어떤 것을 보고, 누구와 함께하며
+        어디를 갈 것인지 일기를 적어보자. 단순한 상상이라도 무기력한 현실에 작은 활기를 넣어줄 것이다.</b>
+    </div>
+
+    <div class='left-area'>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=BH9QGqMwVvs&t=9s" onclick="return yesorno1_checkbox()" target="_blank">미국
+        <li><a href="https://www.youtube.com/watch?v=2x3APtAjWhQ" onclick="return yesorno1_checkbox()" target="_blank">영국
+        <li><a href="https://www.youtube.com/watch?v=OiE9Ja_9O2M" onclick="return yesorno1_checkbox()" target="_blank">중국
+        <li><a href="https://www.youtube.com/watch?v=91kAIbxm8S4&t=1s" onclick="return yesorno1_checkbox()" target="_blank">일본
+        <li><a href="https://www.youtube.com/watch?v=d2iiX14vQzM" onclick="return yesorno1_checkbox()" target="_blank">러시아
+        <li><a href="https://www.youtube.com/" onclick="return yesorno1_checkbox()" target="_blank">기타
+        <ul>
+    </div>
+
+    <div class='right-area'>
+      <ul>
+        <li><a href="http://www.123tour.co.kr/" onclick="return yesorno2_checkbox()" target="_blank">삼성여행사
+        <li><a href="https://www.hanatour.com/" onclick="return yesorno2_checkbox()" target="_blank">하나투어
+        <li><a href="https://www.tour2000.co.kr/index.do" onclick="return yesorno2_checkbox()" target="_blank">투어2000
+        </ul>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+    <hr>
+
+    <div>
+      <button onclick="window.open('2page_of_diary.html')">여행하기</button>
+    </div>
+  </body>
+</html>
